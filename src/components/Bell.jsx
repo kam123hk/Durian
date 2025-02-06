@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function Bell({isDeckDisabled, setIsDeckDisabled, isGameOver, setIsGameOver, orders, playerCards, message, setMessage}) {
+function Bell({isDeckDisabled, setIsDeckDisabled, isGameOver, setIsGameOver, orders, playerCards, message, setMessage, isComputerTurn}) {
 
     // let message = 'Ring Bell';
 
@@ -41,7 +41,7 @@ function Bell({isDeckDisabled, setIsDeckDisabled, isGameOver, setIsGameOver, ord
 
 
 
-    return <button disabled={isDeckDisabled} onClick={() => {
+    return <button disabled={isComputerTurn || isDeckDisabled} onClick={() => {
         setIsDeckDisabled(boolean => !boolean)
         setIsGameOver(boolean => !boolean)
     }}>{message}</ button>

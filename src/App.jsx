@@ -53,7 +53,7 @@ function App() {
       <Board />
       <Card currentCard={currentCard} setCurrentCard={setCurrentCard} setOrders={setOrders} isDeckDisabled={isDeckDisabled} setIsDeckDisabled={setIsDeckDisabled} isGameOver={isGameOver} deck={deck} setDeck={setDeck} setIsComputerTurn={setIsComputerTurn} isComputerTurn={isComputerTurn}/>
       <Deck deck={deck} setDeck={setDeck} setCurrentCard={setCurrentCard} isDeckDisabled={isDeckDisabled} setIsDeckDisabled={setIsDeckDisabled} isComputerTurn={isComputerTurn}/>
-      <Bell isDeckDisabled={isDeckDisabled} setIsDeckDisabled={setIsDeckDisabled} setIsGameOver={setIsGameOver} isGameOver={isGameOver} playerCards={deckOfCards.playerCards} orders={orders} message={message} setMessage={setMessage}/>
+      <Bell isDeckDisabled={isDeckDisabled} setIsDeckDisabled={setIsDeckDisabled} setIsGameOver={setIsGameOver} isGameOver={isGameOver} playerCards={deckOfCards.playerCards} orders={orders} message={message} setMessage={setMessage} isComputerTurn={isComputerTurn}/>
       <Cardz orders={orders} />
       </ThemeContext.Provider>
     </>

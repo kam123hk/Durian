@@ -76,6 +76,7 @@ console.log(currentCard, 'cuurrrr card in card jsx)')
 
         for (let i = 0; i < 3; i++) {
             let number = index();
+            setIsComputerTurn(true)
             setTimeout(() => {
                 setCurrentCard(deck.deck[number])
                 setOrders(orders => {
@@ -93,6 +94,7 @@ console.log(currentCard, 'cuurrrr card in card jsx)')
                 // let newDeck = {...deck}
                 // newDeck.deck = newDeck.deck.slice(1)
                 setDeck(newDeck)
+                if (i === 2) setIsComputerTurn(false)
             }, 3000*(i+1))
         }
     }

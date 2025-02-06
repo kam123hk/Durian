@@ -16,7 +16,7 @@ function Deck({deck, setDeck, setCurrentCard, isDeckDisabled, setIsDeckDisabled,
         setDeck(newDeck)
     }
 
-    return <button disabled={isDeckDisabled} onClick={
+    return <button disabled={isComputerTurn || isDeckDisabled} onClick={
         () => {
             setIsDeckDisabled(boolean => {
                 return !boolean
