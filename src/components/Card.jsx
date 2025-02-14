@@ -14,7 +14,7 @@ import Blank from '../assets/blank.png'
 import newCard2 from '../../cards.js'
 
 
-function Card({currentCard, setCurrentCard, setOrders, isDeckDisabled, setIsDeckDisabled, isGameOver, deck, setDeck, setIsComputerTurn, isComputerTurn}) {
+function Card({currentCard, setCurrentCard, setOrders, isDeckDisabled, setIsDeckDisabled, isGameOver, deck, setDeck, setIsComputerTurn, isComputerTurn, numberOfComputerPlayers}) {
 console.log(currentCard, 'cuurrrr card in card jsx)')
 
     let fruitPic;
@@ -70,11 +70,11 @@ console.log(currentCard, 'cuurrrr card in card jsx)')
         return counterFunc;
       }
     
-    const index = fromTo(0, 3);
+    const index = fromTo(0, numberOfComputerPlayers);
 
     function drawFromDeck() {
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < numberOfComputerPlayers; i++) {
             let number = index();
             setIsComputerTurn(true)
             setTimeout(() => {
@@ -94,7 +94,7 @@ console.log(currentCard, 'cuurrrr card in card jsx)')
                 // let newDeck = {...deck}
                 // newDeck.deck = newDeck.deck.slice(1)
                 setDeck(newDeck)
-                if (i === 2) setIsComputerTurn(false)
+                if (i === numberOfComputerPlayers-1) setIsComputerTurn(false)
             }, 3000*(i+1))
         }
     }
