@@ -43,7 +43,7 @@ function App() {
     <>
       <ThemeContext.Provider value={{theme, setTheme}}>
         {!gameStarted &&<PlayerCount setGameStarted={setGameStarted} setNumberOfComputerPlayers={setNumberOfComputerPlayers}/>}
-        {gameStarted && <Game numberOfComputerPlayers={numberOfComputerPlayers}/>}
+        {gameStarted && <Game numberOfComputerPlayers={numberOfComputerPlayers} theme={theme}/>}
       </ThemeContext.Provider>
     </>
   )

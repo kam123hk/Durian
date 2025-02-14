@@ -12,7 +12,7 @@ import Bell from './Bell';
 // const deckOfCards = createDeck(4)
 // for some reason, if I put this inside the App function or invoke it directly in the useState for deck, then I get an unexplainable bug: Upon a click of Theme or Deck buttons, App re-renders with a new value of Deck and createDeck is called again. Even though nowhere it seems that the deck state should change ie setDeck only shifts the array one along. However even stranger is that the next click of Theme or Deck keeps the new deck array as is and does not change it! I have spent about an hour on this and cannot see the solution, so I have kept deckOfCards outside.
 
-function Game({numberOfComputerPlayers}) {
+function Game({numberOfComputerPlayers, theme}) {
 
   // const deckOfCards = createDeck()
 
@@ -33,6 +33,8 @@ function Game({numberOfComputerPlayers}) {
 
   const [isComputerTurn, setIsComputerTurn] = useState(false)
 
+  const [DoubleStraw, setDoubleStraw] = useState(null);
+
   return (
     <>
         <div>
@@ -42,7 +44,7 @@ function Game({numberOfComputerPlayers}) {
       <Card currentCard={currentCard} setCurrentCard={setCurrentCard} setOrders={setOrders} isDeckDisabled={isDeckDisabled} setIsDeckDisabled={setIsDeckDisabled} isGameOver={isGameOver} deck={deck} setDeck={setDeck} setIsComputerTurn={setIsComputerTurn} isComputerTurn={isComputerTurn} numberOfComputerPlayers={numberOfComputerPlayers}/>
       <Deck deck={deck} setDeck={setDeck} setCurrentCard={setCurrentCard} isDeckDisabled={isDeckDisabled} setIsDeckDisabled={setIsDeckDisabled} isComputerTurn={isComputerTurn}/>
       <Bell isDeckDisabled={isDeckDisabled} setIsDeckDisabled={setIsDeckDisabled} setIsGameOver={setIsGameOver} isGameOver={isGameOver} playerCards={deck.playerCards} orders={orders} message={message} setMessage={setMessage} isComputerTurn={isComputerTurn}/>
-      <Cardz orders={orders} />
+      <Cardz orders={orders} theme={theme} DoubleStraw={DoubleStraw} setDoubleStraw={setDoubleStraw}/>
     </>
   )
 }
