@@ -1,48 +1,45 @@
 import DoubleBanana from '../assets/double-banana.jpg'
 import TripleBanana from '../assets/triple-banana.jpg'
 import SingleBanana from '../assets/single-banana.jpg'
-// import DoubleRasp from '../assets/double-raspberry.jpg'
-// import TripleRasp from '../assets/triple-raspberry.jpg'
-// import SingleRasp from '../assets/single-raspberry.jpg'
-// import SingleStraw from '../assets/single-strawberry.jpg'
-// import DoubleStraw from '../assets/double-strawberry.jpg'
-// import TripleStraw from '../assets/triple-strawberry.jpg'
+import DoubleRasp2 from '../assets/double-raspberry.jpg'
+import TripleRasp2 from '../assets/triple-raspberry.jpg'
+import SingleRasp2 from '../assets/single-raspberry.jpg'
+import SingleStraw2 from '../assets/single-strawberry.jpg'
+import DoubleStraw2 from '../assets/double-strawberry.jpg'
+import TripleStraw2 from '../assets/triple-strawberry.jpg'
 import SingleDurian from '../assets/single-durian.jpg'
 import DoubleDurian from '../assets/double-durian.jpg'
 import TripleDurian from '../assets/triple-durian.jpg'
 import Blank from '../assets/blank.png'
+
+import SingleRose from '../assets/single-rose.jpg';
+import DoubleRose from '../assets/double-rose.jpg';
+import TripleRose from '../assets/triple-rose.png';
+import SingleHeart from '../assets/single-heart.jpg';
+import DoubleHeart from '../assets/double-heart.jpg';
+import TripleHeart from '../assets/triple-heart.jpg';
 
 import { useEffect, useState } from 'react'
 
 
 function Cardz({orders, theme}) {
 
-    const [SingleRasp, setSingleRasp] = useState(null);
-    const [DoubleRasp, setDoubleRasp] = useState(null);
-    const [TripleRasp, setTripleRasp] = useState(null);
-    const [SingleStraw, setSingleStraw] = useState(null);
-    const [DoubleStraw, setDoubleStraw] = useState(null);
-    const [TripleStraw, setTripleStraw] = useState(null);
+    const [SingleRasp, setSingleRasp] = useState(SingleRasp2);
+    const [DoubleRasp, setDoubleRasp] = useState(DoubleRasp2);
+    const [TripleRasp, setTripleRasp] = useState(TripleRasp2);
+    const [SingleStraw, setSingleStraw] = useState(SingleStraw2);
+    const [DoubleStraw, setDoubleStraw] = useState(DoubleStraw2);
+    const [TripleStraw, setTripleStraw] = useState(TripleStraw2);
     
 
     useEffect(() => {
-        async function loadImage() {
-            const singleRaspOrRose = theme === 'dark' ? await import('../assets/single-rose.jpg') : await import('../assets/single-raspberry.jpg');
-            const doubleRaspOrRose = theme === 'dark' ? await import('../assets/double-rose.jpg') : await import('../assets/double-raspberry.jpg');
-            const tripleRaspOrRose = theme === 'dark' ? await import('../assets/triple-rose.png') : await import('../assets/triple-raspberry.jpg');
-            const singleStrawOrHeart = theme === 'dark' ? await import('../assets/single-heart.jpg') : await import('../assets/single-strawberry.jpg');
-            const doubleStrawOrHeart = theme === 'dark' ? await import('../assets/double-heart.jpg') : await import('../assets/double-strawberry.jpg');
-            const tripleStrawOrHeart = theme === 'dark' ? await import('../assets/triple-heart.jpg') : await import('../assets/triple-strawberry.jpg');
-            setSingleRasp(singleRaspOrRose.default)
-            setDoubleRasp(doubleRaspOrRose.default)
-            setTripleRasp(tripleRaspOrRose.default)
-            setSingleStraw(singleStrawOrHeart.default)
-            setDoubleStraw(doubleStrawOrHeart.default);
-            setTripleStraw(tripleStrawOrHeart.default);
-        };
-    
-        loadImage();
-      }, [theme]); // Re-run when the theme changes
+            setSingleRasp(theme === 'dark' ? SingleRose : SingleRasp2)
+            setDoubleRasp(theme === 'dark' ? DoubleRose : DoubleRasp2)
+            setTripleRasp(theme === 'dark' ? TripleRose : TripleRasp2)
+            setSingleStraw(theme === 'dark' ? SingleHeart : SingleStraw2)
+            setDoubleStraw(theme === 'dark' ? DoubleHeart : DoubleStraw2)
+            setTripleStraw(theme === 'dark' ? TripleHeart : TripleStraw2)
+        }, [theme]);
 
     function cardHelper(card) {
         let fruitPic;
