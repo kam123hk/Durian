@@ -1,19 +1,19 @@
-import DoubleBanana from '../assets/double-banana.jpg'
-import TripleBanana from '../assets/triple-banana.jpg'
-import SingleBanana from '../assets/single-banana.jpg'
-import DoubleRasp from '../assets/double-raspberry.jpg'
-import TripleRasp from '../assets/triple-raspberry.jpg'
-import SingleRasp from '../assets/single-raspberry.jpg'
-import SingleStraw from '../assets/single-strawberry.jpg'
-import DoubleStraw from '../assets/double-strawberry.jpg'
-import TripleStraw from '../assets/triple-strawberry.jpg'
-import SingleDurian from '../assets/single-durian.jpg'
-import DoubleDurian from '../assets/double-durian.jpg'
-import TripleDurian from '../assets/triple-durian.jpg'
+// import DoubleBanana from '../assets/double-banana.jpg'
+// import TripleBanana from '../assets/triple-banana.jpg'
+// import SingleBanana from '../assets/single-banana.jpg'
+// import DoubleRasp from '../assets/double-raspberry.jpg'
+// import TripleRasp from '../assets/triple-raspberry.jpg'
+// import SingleRasp from '../assets/single-raspberry.jpg'
+// import SingleStraw from '../assets/single-strawberry.jpg'
+// import DoubleStraw from '../assets/double-strawberry.jpg'
+// import TripleStraw from '../assets/triple-strawberry.jpg'
+// import SingleDurian from '../assets/single-durian.jpg'
+// import DoubleDurian from '../assets/double-durian.jpg'
+// import TripleDurian from '../assets/triple-durian.jpg'
 import Blank from '../assets/blank.png'
 
 
-function PlayerCards({playerCards, isGameOver}) {
+function PlayerCards({playerCards, isGameOver, SingleRasp, DoubleRasp, TripleRasp, SingleStraw, DoubleStraw, TripleStraw, SingleBanana, DoubleBanana, TripleBanana, SingleDurian, DoubleDurian, TripleDurian}) {
 
     function cardHelper(card) {
         let fruitPic;
